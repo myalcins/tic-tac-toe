@@ -72,13 +72,15 @@ const oTurn = blockArray => {
 };
 
 [...blocks].forEach(block => block.addEventListener("click", () => {
-    if(gameConfig.ended !== 1 && gameConfig.turnCount !== 0 && block.textContent !== gameConfig.xPointer && block.textContent !== gameConfig.oPointer){
-        block.textContent = gameConfig.xPointer;
-        blockArray.remove(block.getAttribute("id"));
-        move();
-        if (gameConfig.ended !== 1 && gameConfig.turnCount !== 0){
-            oTurn(blockArray);
-        }
+    if(gameConfig.ended !== 1 && gameConfig.turnCount !== 0 &){
+       if(block.textContent !== gameConfig.xPointer && block.textContent !== gameConfig.oPointer){
+          block.textContent = gameConfig.xPointer;
+          blockArray.remove(block.getAttribute("id"));
+          move();
+          if (gameConfig.ended !== 1 && gameConfig.turnCount !== 0){
+              oTurn(blockArray);
+          }
+      }
     };
 } ));
 
